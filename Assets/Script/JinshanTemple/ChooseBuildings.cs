@@ -10,6 +10,7 @@ public class ChooseBuildings : MonoBehaviour
     private bool hasExecuted = false;
     [SerializeField] private Vector3 destination;
     [SerializeField] private Vector3 originalPosition;
+    [SerializeField] private int num;
     private Rigidbody rb;
     private Vector3 currentVelocity;
     private float smoothForwardTime = 0.3f;
@@ -25,7 +26,7 @@ public class ChooseBuildings : MonoBehaviour
         isDragging = false;
         hasExecuted = false;
 }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +38,7 @@ public class ChooseBuildings : MonoBehaviour
             transform.position = mousePosition;
         }
 
-        if (!isDragging && distance <= r)
+        if (!isDragging && distance <= r&&num==DestinationMovement.DestinationCount)
         {
             transform.position = Vector3.SmoothDamp(
             transform.position,
@@ -46,6 +47,7 @@ public class ChooseBuildings : MonoBehaviour
             smoothForwardTime,
             maxSpeed
             );
+            
         }
         else if(!isDragging && distance >= r&&transform.position!=originalPosition)
         {
@@ -58,10 +60,11 @@ public class ChooseBuildings : MonoBehaviour
             );
         }
 
-        if (transform.position == originalPosition&& !hasExecuted)
+        if (transform.position == destination&& !hasExecuted)
         {
             //ÌØÐ§
             hasExecuted = true;
+            DestinationMovement.DestinationCount++;
         }
     }
 

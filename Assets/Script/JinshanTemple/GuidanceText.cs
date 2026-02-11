@@ -5,6 +5,8 @@ using UnityEngine;
 public class GuidanceText : MonoBehaviour
 {
     private int lastDetectedValue;
+    [SerializeField] private GameObject exitButton;
+    [SerializeField] private GameObject text;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class GuidanceText : MonoBehaviour
 
         if (currentValue != lastDetectedValue)
         {
-
+            
             HandleDestinationCountChange(currentValue);
 
             lastDetectedValue = currentValue;
@@ -29,9 +31,29 @@ public class GuidanceText : MonoBehaviour
         switch(DestinationMovement.DestinationCount)
         {
             case 0:
-                gameObject.SetActive(true); break;//后面改其他文本
+                text.SetActive(true); //后面改其他文本
+                exitButton.SetActive(true); break;
+            case 1:
+                text.SetActive(true); //后面改其他文本
+                exitButton.SetActive(true); break;
+            case 2:
+                text.SetActive(true); //后面改其他文本
+                exitButton.SetActive(true); break;
+            case 3:
+                text.SetActive(true); //后面改其他文本
+                exitButton.SetActive(true); break;
+            case 4:
+                text.SetActive(true); //后面改其他文本
+                exitButton.SetActive(true); break;
 
         }
+    }
+
+    public void ToggleObject()
+    {
+        text.SetActive(false); 
+        exitButton.SetActive(false); 
+
     }
 
 }

@@ -66,6 +66,7 @@ public class ChooseBuildings : MonoBehaviour
             hasExecuted = true;
             DestinationMovement.DestinationCount++;
         }
+        Debug.Log(DestinationMovement.DestinationCount);
     }
 
     private void OnMouseDown()

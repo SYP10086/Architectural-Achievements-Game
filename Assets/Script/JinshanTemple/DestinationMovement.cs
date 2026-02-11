@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DestinationMovement : MonoBehaviour
 {
-    [SerializeField] private Vector3[] destination=new Vector3[4];
+    [SerializeField] private Vector3[] destination=new Vector3[5];
     public static int DestinationCount { get; set; } =0;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,9 @@ public class DestinationMovement : MonoBehaviour
                 break;
             case 3:
                 transform.position = destination[3];
+                break;
+            case 4:
+                transform.position = destination[4];
                 break;
         }
     }

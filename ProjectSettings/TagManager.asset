@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tube
+    uniqueID: 2058812413
+    locked: 0

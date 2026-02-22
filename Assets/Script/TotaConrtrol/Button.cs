@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
-   private GameObject positionObject;
+ //  private GameObject positionObject;
     //private GameObject dialoguePanel;
     public string Level;
     Animator animator;
@@ -18,11 +18,11 @@ public class Button : MonoBehaviour
   
       //  dialoguePanel.gameObject.SetActive(false);
        
-            positionObject = GameObject.Find(Level);
-        if (positionObject != null )
-        this.transform.position = positionObject.transform.position;
+        //    positionObject = GameObject.Find(Level);
+     //   if (positionObject != null )
+       // this.transform.position = positionObject.transform.position;
         animator = GetComponent<Animator>();
-        animator.SetBool("FadeOut", false);
+        animator.SetBool(Level, false);
     }
 
     // Update is called once per frame
@@ -33,7 +33,8 @@ public class Button : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(Level);
-        animator.SetBool("FadeOut", true);
+        animator.SetBool(Level, true);
+        Debug.Log(0);
     }
     public void Quit()
     {

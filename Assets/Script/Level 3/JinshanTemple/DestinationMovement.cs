@@ -33,5 +33,9 @@ public class DestinationMovement : MonoBehaviour
                 transform.position = destination[4];
                 break;
         }
+        if (DestinationCount == 5)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

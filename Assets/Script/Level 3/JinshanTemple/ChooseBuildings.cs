@@ -37,36 +37,44 @@ public class ChooseBuildings : MonoBehaviour
             mousePosition.z = zPosition;
             transform.position = mousePosition;
         }
-
-        if (!isDragging && distance <= r&&num==DestinationMovement.DestinationCount)
+        if (!isDragging && num == DestinationMovement.DestinationCount)
+        {
+            if (distance <= r)
+            {
+                transform.position = Vector3.SmoothDamp(
+                transform.position,
+                destination,
+                ref currentVelocity,
+                smoothForwardTime,
+                maxSpeed
+                );
+            }else
+                transform.position = Vector3.SmoothDamp(
+                transform.position,
+                originalPosition,
+                ref currentVelocity,
+                smoothBackTime,
+                maxSpeed
+                );
+        }else if(!isDragging && num > DestinationMovement.DestinationCount)
         {
             transform.position = Vector3.SmoothDamp(
-            transform.position,
-            destination,
-            ref currentVelocity,
-            smoothForwardTime,
-            maxSpeed
-            );
-            
+                transform.position,
+                originalPosition,
+                ref currentVelocity,
+                smoothBackTime,
+                maxSpeed
+                );
         }
-        else if(!isDragging && distance >= r&&transform.position!=originalPosition)
-        {
-            transform.position = Vector3.SmoothDamp(
-            transform.position,
-            originalPosition,
-            ref currentVelocity,
-            smoothBackTime,
-            maxSpeed
-            );
-        }
-
+        
         if (transform.position == destination&& !hasExecuted)
         {
             //ÌØÐ§
             hasExecuted = true;
             DestinationMovement.DestinationCount++;
+            this.enabled = false;
         }
-        Debug.Log(DestinationMovement.DestinationCount);
+        //Debug.Log(DestinationMovement.DestinationCount);
     }
 
     private void OnMouseDown()

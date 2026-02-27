@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac9b97d1c9b229c43a1beafea819f49f
+guid: dda189e6e7414d8438d978304069f8b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 136
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,91 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: fafe1f97006f4cfd9009ee16ac8914bf_0_visibleWatermark_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 544
-        width: 544
-        height: 544
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b73c0f70ce6cb4045a6d86e96c3a3594
-      internalID: -532014292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fafe1f97006f4cfd9009ee16ac8914bf_0_visibleWatermark_1
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 544
-        width: 544
-        height: 544
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53b7977cc67ba994e94666131afb8c12
-      internalID: -734762150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fafe1f97006f4cfd9009ee16ac8914bf_0_visibleWatermark_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 544
-        height: 544
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ba21fc38e698f34ba94de8509b72ff9
-      internalID: -328854558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fafe1f97006f4cfd9009ee16ac8914bf_0_visibleWatermark_3
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 0
-        width: 544
-        height: 544
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47612d81accf167449b3b1c4321efa7d
-      internalID: 946354937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -203,11 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      fafe1f97006f4cfd9009ee16ac8914bf_0_visibleWatermark_0: -532014292
-      fafe1f97006f4cfd9009ee16ac8914bf_0_visibleWatermark_1: -734762150
-      fafe1f97006f4cfd9009ee16ac8914bf_0_visibleWatermark_2: -328854558
-      fafe1f97006f4cfd9009ee16ac8914bf_0_visibleWatermark_3: 946354937
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

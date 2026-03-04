@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,9 +93,150 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "\u5343\u5E93\u7F51_\u65E7\u7EB8\u8D28\u611F\u4E2D\u56FD\u98CE\u53E4\u98CE\u5377\u8F74\u8FB9\u6846_\u5143\u7D20\u7F16\u53F714580985_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 666.6667
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be61be0f2606ca24f85256dba36b1f9a
+      internalID: 1724419668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u5343\u5E93\u7F51_\u65E7\u7EB8\u8D28\u611F\u4E2D\u56FD\u98CE\u53E4\u98CE\u5377\u8F74\u8FB9\u6846_\u5143\u7D20\u7F16\u53F714580985_1"
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 0
+        width: 666.6667
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3473acb42d19cf4469397dd0409aed0e
+      internalID: 1518611967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u5343\u5E93\u7F51_\u65E7\u7EB8\u8D28\u611F\u4E2D\u56FD\u98CE\u53E4\u98CE\u5377\u8F74\u8FB9\u6846_\u5143\u7D20\u7F16\u53F714580985_2"
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 0
+        width: 666.6667
+        height: 2000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930cec5dfc36bfb4dae8c16a48e24c4e
+      internalID: 1988989383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +247,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u5343\u5E93\u7F51_\u65E7\u7EB8\u8D28\u611F\u4E2D\u56FD\u98CE\u53E4\u98CE\u5377\u8F74\u8FB9\u6846_\u5143\u7D20\u7F16\u53F714580985_0": 1724419668
+      "\u5343\u5E93\u7F51_\u65E7\u7EB8\u8D28\u611F\u4E2D\u56FD\u98CE\u53E4\u98CE\u5377\u8F74\u8FB9\u6846_\u5143\u7D20\u7F16\u53F714580985_1": 1518611967
+      "\u5343\u5E93\u7F51_\u65E7\u7EB8\u8D28\u611F\u4E2D\u56FD\u98CE\u53E4\u98CE\u5377\u8F74\u8FB9\u6846_\u5143\u7D20\u7F16\u53F714580985_2": 1988989383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

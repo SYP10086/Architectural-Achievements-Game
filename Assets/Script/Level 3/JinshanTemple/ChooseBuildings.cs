@@ -16,26 +16,41 @@ public class ChooseBuildings : MonoBehaviour
     private float smoothForwardTime = 0.3f;
     private float smoothBackTime = 0.5f;
     private float maxSpeed = Mathf.Infinity;
-    private float zPosition = 0f;
+    //private float zPosition = 0f;
     private float distance ;
     private float r = 2;
+    private float cameraDepth;
+    public LayerMask GroundLayer;   
+    public float heightOffset = 0f; 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         isDragging = false;
         hasExecuted = false;
-}
+        rb.isKinematic = true;
+    }
     
     // Update is called once per frame
     void Update()
     {
         distance = Vector3.Distance(transform.position, destination);
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (isDragging)
         {
-            mousePosition.z = zPosition;
-            transform.position = mousePosition;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, GroundLayer))
+            {
+                Debug.Log("Hit: " + hit.collider.name);  // 添加这一行
+                Vector3 targetPos = hit.point;
+                targetPos.y += heightOffset; 
+                transform.position = targetPos;
+            }
+            else
+            {
+                Debug.Log("No hit");  // 添加这一行
+            }
         }
         if (!isDragging && num == DestinationMovement.DestinationCount)
         {

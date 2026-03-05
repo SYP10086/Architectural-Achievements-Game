@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class ButtonForPoem : MonoBehaviour
@@ -9,7 +10,9 @@ public class ButtonForPoem : MonoBehaviour
    
     public string Level;
     public Animator animator;
-   
+    public Material BlurMat;
+    public Material DefaultMat;
+    public GameObject GameObject;
     public float animationLength = 1f;
 
 
@@ -33,6 +36,9 @@ public class ButtonForPoem : MonoBehaviour
     public void OnButtonClick()
     {
         animator.SetBool(Level, true);
+       // Blur.BlurGameObject(GameObject,BlurMat);
+       Camera cam = Camera.main;
+        
         StartCoroutine(Play());
     
     }

@@ -10,11 +10,15 @@ public class DialogueManager : MonoBehaviour
     public Dialogue dialogue1;
     public Dialogue dialogue2;
     public Dialogue dialogue3;
+    public GameObject Background;
+    public Material Material;
+    public Material DefaultMat;
 
     private Dialogue currentDialogue;
     private int currentSentenceIndex;
     private bool isTyping;
     private Coroutine typingCoroutine;
+    
 
     private enum DialogueState
     {
@@ -30,6 +34,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+     
         ValidateDialogues();
         CloseAllPanels();
     }
@@ -43,6 +48,9 @@ public class DialogueManager : MonoBehaviour
         if (dialogue3 != null && dialogue3.dialogueText == null)
             Debug.LogError("dialogue3 的 dialogueText 未赋值！");
     }
+
+
+  
 
     // 同一个按钮点击方法
     public void OnButtonClick()
@@ -78,13 +86,15 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogue == null || dialogue.dialogueText == null)
         {
-            Debug.LogError("无法开始对话：dialogue 或 dialogueText 为 null");
+            //Debug.LogError("无法开始对话：dialogue 或 dialogueText 为 null");
             return;
         }
 
         // 关闭所有面板
         CloseAllPanels();
-
+        Camera camera = Camera.main;
+       camera.GetComponent<CameraBlurDarken>().enabled = true;
+        
         // 设置当前对话
         currentDialogue = dialogue;
         currentSentenceIndex = 0;
@@ -227,6 +237,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         currentDialogue = null;
+       // Renderer renderer = Background.GetComponent<Renderer>();
+       // renderer.material = DefaultMat;
+       Camera camera = Camera.main;
+       camera.GetComponent<CameraBlurDarken>().enabled = false;
     }
 
     void CloseAllPanels()

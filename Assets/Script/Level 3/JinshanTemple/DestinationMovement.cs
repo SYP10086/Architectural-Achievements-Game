@@ -36,6 +36,8 @@ public class DestinationMovement : MonoBehaviour
         if (DestinationCount == 5)
         {
             gameObject.SetActive(false);
+            /*AchieveDetect.achieve[2] = true;
+            PlayerPrefs.SetInt("achieve[2]", 1);*/
         }
     }
 }

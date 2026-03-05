@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 2 After.unity
     guid: 86fc0b915f5c4fa4798f7afd45993770
   - enabled: 1
-    path: Assets/Scenes/Level 3.unity
+    path: Assets/Scenes/JinshanTemple.unity
     guid: 0a48f363cc5ea5948a62d56dd01b92cf
   m_configObjects: {}

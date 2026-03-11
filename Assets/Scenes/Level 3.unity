@@ -321,7 +321,7 @@ MonoBehaviour:
   boxX: 2
   boxY: 2
   destination: {x: 3, y: 0.5, z: 0}
-  originalPosition: {x: 0, y: -4, z: 0}
+  originalPosition: {x: 2, y: -9.3, z: 0}
   num: 2
   GroundLayer:
     serializedVersion: 2
@@ -367,7 +367,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c796e0104b693b64ab12400d9fc5b6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.8666667}
   m_FlipX: 0
@@ -780,6 +780,7 @@ Transform:
   - {fileID: 1359372751}
   - {fileID: 683489310}
   - {fileID: 2010562133}
+  - {fileID: 1268307507}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &284417773
@@ -1188,7 +1189,7 @@ Transform:
   m_GameObject: {fileID: 575037245}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5027237, y: 1.2469343, z: 0.029006217}
+  m_LocalPosition: {x: 0, y: 0, z: 0.029006217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2025,8 +2026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxX: 2
   boxY: 2
-  destination: {x: 2, y: -1, z: 0}
-  originalPosition: {x: 3, y: -4, z: 0}
+  destination: {x: 7, y: 2, z: 0}
+  originalPosition: {x: 7, y: -9, z: 0}
   num: 3
   GroundLayer:
     serializedVersion: 2
@@ -2072,7 +2073,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 07b3d8be8813da549b27f3a2e3d394e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.94509804}
   m_FlipX: 0
@@ -2227,6 +2228,7 @@ GameObject:
   - component: {fileID: 1127181763}
   - component: {fileID: 1127181762}
   - component: {fileID: 1127181765}
+  - component: {fileID: 1127181766}
   m_Layer: 5
   m_Name: "GuidanceTextExit_\u9762\u671D\u6444\u50CF\u673A"
   m_TagString: Untagged
@@ -2251,7 +2253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1005, y: 322}
+  m_AnchoredPosition: {x: 900, y: -536}
   m_SizeDelta: {x: 181.44, y: 88.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127181762
@@ -2412,6 +2414,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1127181766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127181760}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becfb63db5bf9d34689e0b8f806b7de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1183638042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,13 +2626,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268307504}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.036506847, y: -0.34298587, z: -2.2814121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 575037247}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 283061800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1291875811
 GameObject:
@@ -2851,9 +2865,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxX: 2
   boxY: 2
-  destination: {x: -1, y: 0, z: 0}
-  originalPosition: {x: -3, y: -4, z: 0}
-  num: 1
+  destination: {x: -1, y: -1, z: 0}
+  originalPosition: {x: -8, y: -9.3, z: 0}
+  num: 0
   GroundLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -2898,7 +2912,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: bbaab243feb61754aaa719bad8b2d157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.90588236}
   m_FlipX: 0
@@ -3024,11 +3038,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination:
-  - {x: -3, y: 2, z: 0}
-  - {x: -1, y: 0, z: 0}
+  - {x: -1, y: -1, z: 0}
+  - {x: -3, y: -2, z: 0}
   - {x: 3, y: 0.5, z: 0}
-  - {x: 2, y: -1, z: 0}
-  - {x: 1, y: 1, z: 0}
+  - {x: 7, y: 2, z: 0}
+  - {x: 9, y: -1.5, z: 0}
 --- !u!1 &1387720922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,8 +3721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxX: 2
   boxY: 2
-  destination: {x: 1, y: 1, z: 0}
-  originalPosition: {x: 6, y: -4, z: 0}
+  destination: {x: 9, y: -1.5, z: 0}
+  originalPosition: {x: 12, y: -9, z: 0}
   num: 4
   GroundLayer:
     serializedVersion: 2
@@ -3816,8 +3830,8 @@ MonoBehaviour:
   boxX: 2
   boxY: 2
   destination: {x: -3, y: 2, z: 0}
-  originalPosition: {x: -6, y: -4, z: 0}
-  num: 0
+  originalPosition: {x: -3, y: -9, z: 0}
+  num: 1
   GroundLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -4017,8 +4031,8 @@ Transform:
   m_GameObject: {fileID: 2010562131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.9, y: 2.4, z: -2.2814121}
-  m_LocalScale: {x: 0.5500755, y: 1.6252514, z: 1}
+  m_LocalPosition: {x: 2, y: 0, z: -2.2814121}
+  m_LocalScale: {x: 1, y: 1.6252514, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 26397545}
@@ -4101,7 +4115,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 101740213}
-  - {fileID: 1268307507}
   - {fileID: 284417777}
   - {fileID: 1183638046}
   - {fileID: 1304773485}

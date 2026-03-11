@@ -18,7 +18,7 @@ public class ChooseBuildings : MonoBehaviour
     private float maxSpeed = Mathf.Infinity;
     //private float zPosition = 0f;
     private float distance ;
-    private float r = 2;
+    private float r = 4;
     private float cameraDepth;
     public LayerMask GroundLayer;   
     public float heightOffset = 0f; 
@@ -82,7 +82,7 @@ public class ChooseBuildings : MonoBehaviour
                 );
         }
         
-        if (transform.position == destination&& !hasExecuted)
+        if (Vector3.Distance(transform.position,destination)<=0.1f&& !hasExecuted)
         {
             //ÌØÐ§
             hasExecuted = true;
@@ -105,7 +105,7 @@ public class ChooseBuildings : MonoBehaviour
         
     }
 
-    private void OnMouseOver()
+    /*private void OnMouseOver()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (transform.position == originalPosition)
@@ -119,5 +119,5 @@ public class ChooseBuildings : MonoBehaviour
             }
         }
         
-    }
+    }*/
 }

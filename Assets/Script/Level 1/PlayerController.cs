@@ -39,4 +39,5 @@ public class PlayerController : MonoBehaviour
             Vector3 movement = new Vector3(speed * dir * Time.deltaTime, 0, 0);
         transform.Translate(movement);
     }
+  
 }

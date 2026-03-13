@@ -40,23 +40,23 @@ public class GuidanceText : MonoBehaviour
             
             case 0:
                 text.SetActive(true); //后面改其他文本          
-                //camera.GetComponent<CameraBlurDarken>().enabled = true;
+                camera.GetComponent<CameraBlurDarken>().enabled = true;
                 exitButton.SetActive(true); break;
             case 1:
                 text.SetActive(true); //后面改其他文本
-                //camera.GetComponent<CameraBlurDarken>().enabled = true;
+                camera.GetComponent<CameraBlurDarken>().enabled = true;
                 exitButton.SetActive(true); break;
             case 2:
                 text.SetActive(true); //后面改其他文本
-            //camera.GetComponent<CameraBlurDarken>().enabled = true;
+            camera.GetComponent<CameraBlurDarken>().enabled = true;
             exitButton.SetActive(true); break;
             case 3:
                 text.SetActive(true); //后面改其他文本
-            //camera.GetComponent<CameraBlurDarken>().enabled = true;
+            camera.GetComponent<CameraBlurDarken>().enabled = true;
             exitButton.SetActive(true); break;
             case 4:
                 text.SetActive(true); //后面改其他文本
-            //camera.GetComponent<CameraBlurDarken>().enabled = true;
+            camera.GetComponent<CameraBlurDarken>().enabled = true;
             exitButton.SetActive(true); break;
 
         }
@@ -66,7 +66,7 @@ public class GuidanceText : MonoBehaviour
     {
         text.SetActive(false); 
         exitButton.SetActive(false);
-        //camera.GetComponent<CameraBlurDarken>().enabled = false;
+        camera.GetComponent<CameraBlurDarken>().enabled = false;
     }
 
 }

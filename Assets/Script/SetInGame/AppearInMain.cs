@@ -12,6 +12,7 @@ public class AppearInMain : MonoBehaviour
         Setting = GameObject.Find("UI/Setting");
         menu= GameObject.Find("UI/Menu");
         Setting.SetActive(false);
+        menu.SetActive(false);
     }
     private void Update()
     {

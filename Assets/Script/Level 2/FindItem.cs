@@ -1,5 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class FindItemNonUI_Coroutine : MonoBehaviour
 {
@@ -20,6 +22,9 @@ public class FindItemNonUI_Coroutine : MonoBehaviour
     // 主相机引用
     private Camera mainCamera;
 
+    static int fnum=0;//找到物品数目
+    GameObject bigger;
+    MakeBiger makeBiger;
     void Start()
     {
         // 获取主相机
@@ -113,9 +118,14 @@ public class FindItemNonUI_Coroutine : MonoBehaviour
         // 第三步：执行移动到目标位置动画
         yield return StartCoroutine(MoveToTargetAnimationCoroutine());
 
-        // 动画全部完成，重置标记
-        isAnimating = false;
+        // 动画全部完成，重置标记//已经修改，防止已移动物品重复移动
+        //isAnimating = false;
         Debug.Log($"物品{gameObject.name}动画流程全部完成");
+        fnum++;
+        if(fnum>=4)
+        {
+            MakeBiger.start=true;
+        }
     }
 
     // 拽出动画协程

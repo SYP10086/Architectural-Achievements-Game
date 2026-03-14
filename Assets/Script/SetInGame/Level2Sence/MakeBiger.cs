@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MakeBiger : MonoBehaviour
 {
-    public bool start=false;
-    public double addTime=0;
+    static public bool start=false;
+    static public double addTime=0;
     public float addNum=0.5f;
 
     void Update()
@@ -14,6 +15,12 @@ public class MakeBiger : MonoBehaviour
         {
             addTime+=Time.deltaTime;
             this.gameObject.transform.localScale += new Vector3(addNum*Time.deltaTime, addNum*Time.deltaTime, 0);
+            if (addTime >= 1)
+            {
+                start = false;
+                addTime = 0;
+                SceneManager.LoadScene("Level 2 After");
+            }
         }
     }
 }

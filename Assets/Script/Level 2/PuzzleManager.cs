@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class PuzzleManager : MonoBehaviour
         {
             isCompleted = true;
             Debug.Log("完成");
+            AchieveDetect.achieve[1] = true;
+            SceneManager.LoadScene("Options");
         }
     }
 }

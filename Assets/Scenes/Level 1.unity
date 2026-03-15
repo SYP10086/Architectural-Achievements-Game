@@ -209,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 586183152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 2.5, y: 1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -294,10 +294,18 @@ MonoBehaviour:
   crossPrefab: {fileID: 3207412138711580770, guid: cba177bf3ad18e0429bb200b666469f4, type: 3}
   startPrefab: {fileID: 3337026422392549933, guid: a46f2d2006f04c846872e334aa569cd4, type: 3}
   endPrefab: {fileID: 4790662555866679600, guid: f35479151aef96f49a8da7e7e2ae9575, type: 3}
-  width: 4
-  height: 4
-  startPos: {x: 0, y: 0}
-  endPos: {x: 3, y: 3}
+  empty1Prefab: {fileID: 6184403874225756822, guid: 8d5930488efe2804ca54f13eb2b2033b, type: 3}
+  empty2Prefab: {fileID: 6899428085967638575, guid: 1064a8c17e099404bb04e0cf64511039, type: 3}
+  empty3Prefab: {fileID: 7374448769642614177, guid: 9a2051ae5e6a8e04ca03cfdbae284aa2, type: 3}
+  empty4Prefab: {fileID: 4080326892377223294, guid: 54e158105957be0488cf426c46037273, type: 3}
+  empty5Prefab: {fileID: 6389011491161105708, guid: 4521815b6d75eb24c9948ff0d16e7e3d, type: 3}
+  empty6Prefab: {fileID: 2034958855183371900, guid: 18811e51a8c692448b5662bc499de380, type: 3}
+  empty7Prefab: {fileID: 1536847525111616036, guid: 75a1d96bf0744d54185be41cf070f38f, type: 3}
+  empty8Prefab: {fileID: 6336275834156874127, guid: 7c6b37723cacf924eadc5fee7dfeca3b, type: 3}
+  width: 5
+  height: 5
+  startPos: {x: 1, y: 0}
+  endPos: {x: 4, y: 4}
   isSolved: 0
   isStart: 0
 --- !u!4 &784485778

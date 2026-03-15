@@ -12,15 +12,23 @@ public class GameManager : MonoBehaviour
     public GameObject tShapePrefab;
     public GameObject crossPrefab;
 
-    [Header("起点与终点预制体")]
+    [Header("起点、终点与空预制体")]
     public GameObject startPrefab; 
-    public GameObject endPrefab;   
+    public GameObject endPrefab;
+    public GameObject empty1Prefab;
+    public GameObject empty2Prefab;
+    public GameObject empty3Prefab;
+    public GameObject empty4Prefab;
+    public GameObject empty5Prefab;
+    public GameObject empty6Prefab;
+    public GameObject empty7Prefab;
+    public GameObject empty8Prefab;
 
     [Header("关卡设置")]
-    public int width = 4;
-    public int height = 4;
-    public Vector2 startPos = new Vector2(0, 0); 
-    public Vector2 endPos = new Vector2(3, 3);   
+    public int width = 5;
+    public int height = 5;
+    public Vector2 startPos = new Vector2(1, 0); 
+    public Vector2 endPos = new Vector2(4, 4);   
 
     private Pipe[,] grid;
     public bool isSolved = false;
@@ -54,16 +62,18 @@ public class GameManager : MonoBehaviour
         grid = new Pipe[width, height];
 
 
-        PipeType[,] levelLayout = new PipeType[4, 4]
+        PipeType[,] levelLayout = new PipeType[5, 5]
         {
 
-            { PipeType.Start, PipeType.Straight, PipeType.TShape, PipeType.LShape },
+            { PipeType.Empty1, PipeType.Start, PipeType.Empty2, PipeType.Empty3, PipeType.Empty4 },
 
-            { PipeType.Straight, PipeType.Cross, PipeType.LShape, PipeType.Straight },
+            { PipeType.Empty5, PipeType.Straight, PipeType.Cross, PipeType.LShape, PipeType.Straight },
 
-            { PipeType.LShape, PipeType.TShape, PipeType.Straight, PipeType.Cross },
+            { PipeType.Empty6,  PipeType.LShape, PipeType.TShape, PipeType.Straight, PipeType.Cross },
 
-            { PipeType.Cross, PipeType.LShape, PipeType.Straight, PipeType.End }
+            { PipeType.Empty7,  PipeType.Cross, PipeType.LShape, PipeType.Straight, PipeType.LShape},
+
+            { PipeType.Empty8, PipeType.Straight, PipeType.LShape, PipeType.TShape,PipeType.End  }
         };
 
         for (int x = 0; x < width; x++)
@@ -99,7 +109,15 @@ public class GameManager : MonoBehaviour
             case PipeType.TShape: return tShapePrefab;
             case PipeType.Cross: return crossPrefab;
             case PipeType.Start: return startPrefab; 
-            case PipeType.End: return endPrefab;     
+            case PipeType.End: return endPrefab;  
+            case PipeType.Empty1: return empty1Prefab;
+            case PipeType.Empty2: return empty2Prefab;
+            case PipeType.Empty3: return empty3Prefab;
+            case PipeType.Empty4: return empty4Prefab;
+            case PipeType.Empty5: return empty5Prefab;
+            case PipeType.Empty6: return empty6Prefab;
+            case PipeType.Empty7: return empty7Prefab;
+            case PipeType.Empty8: return empty8Prefab;
             default: return straightPrefab;
         }
     }

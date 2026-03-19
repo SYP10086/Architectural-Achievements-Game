@@ -86,29 +86,25 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogue == null || dialogue.dialogueText == null)
         {
-            //Debug.LogError("无法开始对话：dialogue 或 dialogueText 为 null");
+           
             return;
         }
-
-        // 关闭所有面板
-        CloseAllPanels();
+       CloseAllPanels();
         Camera camera = Camera.main;
        camera.GetComponent<CameraBlurDarken>().enabled = true;
         
-        // 设置当前对话
         currentDialogue = dialogue;
         currentSentenceIndex = 0;
 
-        // 标记为已显示
         if (dialogue == dialogue1) dialogue1.hasShown = true;
         else if (dialogue == dialogue2) dialogue2.hasShown = true;
         else if (dialogue == dialogue3) dialogue3.hasShown = true;
 
-        // 打开当前对话的面板
+       
         if (dialogue.dialoguePanel != null)
             dialogue.dialoguePanel.SetActive(true);
 
-        // 显示第一句
+       
         DisplayNextSentence();
     }
 

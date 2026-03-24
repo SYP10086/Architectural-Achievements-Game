@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -53,6 +54,8 @@ public class GameManager : MonoBehaviour
             {
                 isSolved = true;
                 Debug.Log("管道已连通");
+                AchieveDetect.achieve[0] = true;
+                SceneManager.LoadScene("Options");
             }
         }
     }

@@ -148,7 +148,7 @@ public class DialogueManager : MonoBehaviour
         if (currentSentenceIndex < currentDialogue.sentences.Length)
         {
             string sentence = currentDialogue.sentences[currentSentenceIndex];
-            currentSentenceIndex++;
+           
 
             // 如果正在打字，直接显示完整句子
             if (isTyping)
@@ -156,6 +156,7 @@ public class DialogueManager : MonoBehaviour
                 StopCoroutine(typingCoroutine);
                 currentDialogue.dialogueText.text = sentence;
                 isTyping = false;
+                currentSentenceIndex++;
             }
             else
             {
@@ -201,7 +202,7 @@ public class DialogueManager : MonoBehaviour
 
             yield return new WaitForSeconds(typingSpeed);
         }
-
+        currentSentenceIndex++;
         isTyping = false;
     }
 
@@ -249,7 +250,7 @@ public class DialogueManager : MonoBehaviour
             dialogue3.dialoguePanel.SetActive(false);
     }
 
-    public void ResetDialogues()
+   /* public void ResetDialogues()
     {
         // 停止所有协程
         StopAllCoroutines();
@@ -263,5 +264,5 @@ public class DialogueManager : MonoBehaviour
         if (dialogue3 != null) dialogue3.hasShown = false;
 
         CloseAllPanels();
-    }
+    }*/
 }

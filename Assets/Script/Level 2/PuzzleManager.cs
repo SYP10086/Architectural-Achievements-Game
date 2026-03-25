@@ -33,6 +33,7 @@ public class PuzzleManager : MonoBehaviour
             isCompleted = true;
             Debug.Log("完成");
             AchieveDetect.achieve[1] = true;
+            PlayerPrefs.SetInt("achieve[1]", AchieveDetect.achieve[1]?1:0);
             SceneManager.LoadScene("Options");
         }
     }

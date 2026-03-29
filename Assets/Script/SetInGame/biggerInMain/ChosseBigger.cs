@@ -24,7 +24,6 @@ public class ChosseBigger : MonoBehaviour
         if (time<=0)
         {
             GameObject but = GetOverUI(cave);
-            Debug.Log((but != null ? but.name : " "));
             time = T; 
             if("Text(Legacy)"== (but!=null?but.name:" "))
             {

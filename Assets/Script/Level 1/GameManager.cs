@@ -54,9 +54,7 @@ public class GameManager : MonoBehaviour
             {
                 isSolved = true;
                 Debug.Log("管道已连通");
-                AchieveDetect.achieve[0] = true;
-                PlayerPrefs.SetInt("achieve[0]", AchieveDetect.achieve[0] ? 1 : 0);
-                SceneManager.LoadScene("Options");
+                GameObject.Find("UI/AchieveMusic").GetComponent<AchieveDetect>().PassLevel(0);
             }
         }
     }

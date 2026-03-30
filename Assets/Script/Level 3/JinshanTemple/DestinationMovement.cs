@@ -22,7 +22,7 @@ public class DestinationMovement : MonoBehaviour
         switch (DestinationCount){
             case 0:
                 transform.position = destination[0];
-                sr.sortingOrder = 1;
+                sr.sortingOrder = 3;
                 break;
             case 1:
                 transform.position = destination[1];
@@ -38,7 +38,7 @@ public class DestinationMovement : MonoBehaviour
                 break;
             case 4:
                 transform.position = destination[4];
-                sr.sortingOrder = 2;
+                sr.sortingOrder = 3;
                 break;
         }
         if (DestinationCount == 5)

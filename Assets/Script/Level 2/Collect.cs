@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
-    public static int collectNumber = 0;
+    //public static int collectNumber = 0;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            collectNumber++;
+            //collectNumber++;
+            DioManager.CheckWhichCollect(this.gameObject.name);
             Destroy(gameObject);
         }
     }

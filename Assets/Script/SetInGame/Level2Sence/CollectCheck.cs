@@ -14,26 +14,27 @@ public class CollectCheck : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
+        //if (other.gameObject.CompareTag("Player"))
+        //{
 
-            if (Collect.collectNumber >= 4)
-            {
-                Collect.collectNumber = 0;
-                MakeBiger.start = true;
-            }
-            else if(!MakeBiger.start)
-            {
-                text.SetActive(true);
-                text.GetComponent<Text>().text = $"还差{4- Collect.collectNumber}个，再找找吧";
-            }
-        }
+        //    if (Collect.collectNumber >= 4)
+        //    {
+        //        Collect.collectNumber = 0;
+        //        MakeBiger.start = true;
+        //    }
+        //    else if(!MakeBiger.start)
+        //    {
+        //        text.SetActive(true);
+        //        text.GetComponent<Text>().text = $"还差{4- Collect.collectNumber}个，再找找吧";
+        //    }
+        //}
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            text .SetActive(false);
+            if(text!=null)
+                text .SetActive(false);
         }
     }
 }

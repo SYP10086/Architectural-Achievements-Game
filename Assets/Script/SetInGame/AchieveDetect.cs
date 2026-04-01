@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class AchieveDetect : MonoBehaviour
 {
-    double delaytime = 1.5,time1=0;
-    bool start=false;
+    public double delaytime = 1.5,time1=0;
+    public bool start=false;
     static public bool[] achieve= {false,false,false };
     private void Awake()
     {

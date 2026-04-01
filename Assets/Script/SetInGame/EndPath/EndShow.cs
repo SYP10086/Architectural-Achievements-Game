@@ -26,7 +26,7 @@ public class EndShow : MonoBehaviour
     }
     void Update()
     {
-        if (!EndInformation.end)
+        if (EndInformation.end)
         {
             switch (part)
             {

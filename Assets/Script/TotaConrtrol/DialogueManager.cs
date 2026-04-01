@@ -147,6 +147,9 @@ public class DialogueManager : MonoBehaviour
         // 检查是否还有句子
         if (currentSentenceIndex < currentDialogue.sentences.Length)
         {
+            DioManager.OnDio = true;//bu可移动
+            if(GameObject.Find("Player")!=null&& GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity.y>0)
+                GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity= Vector3.zero;
             string sentence = currentDialogue.sentences[currentSentenceIndex];
            
 
@@ -167,6 +170,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             // 当前对话所有句子已显示完，结束对话
+            DioManager.OnDio = false;//可移动
             EndCurrentDialogue();
         }
     }

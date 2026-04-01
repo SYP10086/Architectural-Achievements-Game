@@ -52,9 +52,11 @@ public class PlayerController : MonoBehaviour
     
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
-            animator.SetBool("IsJumping", true);
-            
+            if (!DioManager.OnDio)
+            {
+                rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+                animator.SetBool("IsJumping", true);
+            }
         }
 
     
@@ -95,9 +97,11 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        float dir = Input.GetAxis("Horizontal");
-
-
+        float dir = 0;
+        if (!DioManager.OnDio)
+        {
+            dir = Input.GetAxis("Horizontal");
+        }
         Vector2 velocity = rb.velocity;
         velocity.x = dir * speed;
         rb.velocity = velocity;

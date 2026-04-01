@@ -22,6 +22,7 @@ public class DoInStart : MonoBehaviour
         if(!i)
         {
             i = true;
+            //Time.timeScale = 0;
             TriggerDialogue();
         }
     }

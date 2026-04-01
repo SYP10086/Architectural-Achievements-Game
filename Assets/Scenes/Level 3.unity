@@ -1114,6 +1114,7 @@ GameObject:
   - component: {fileID: 388425809}
   - component: {fileID: 388425811}
   - component: {fileID: 388425812}
+  - component: {fileID: 388425813}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1130,15 +1131,15 @@ RectTransform:
   m_GameObject: {fileID: 388425807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -362.57593}
-  m_LocalScale: {x: 3.6257594, y: 3.6257594, z: 3.6257594}
+  m_LocalScale: {x: 0.08604706, y: 0.07648799, z: 3.6257594}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 810356883}
+  m_Father: {fileID: 2010562133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144.36151, y: 0.6167145}
-  m_SizeDelta: {x: 160, y: 10}
+  m_AnchoredPosition: {x: -0.34, y: 1.07}
+  m_SizeDelta: {x: 116.27078, y: 48.73528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388425809
 MonoBehaviour:
@@ -1187,8 +1188,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 38
+  m_fontSizeBase: 38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1223,7 +1224,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.42249298, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1301,6 +1302,27 @@ MonoBehaviour:
   exitButton: {fileID: 1127181760}
   text: {fileID: 2010562131}
   targetText: {fileID: 388425809}
+--- !u!95 &388425813
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388425807}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9253e73443ef43843af34d1163fab263, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &447300992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,8 +1602,8 @@ Transform:
   m_GameObject: {fileID: 634120131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.93452, y: 2.5100002, z: 0}
-  m_LocalScale: {x: 0.4492963, y: 0.40847993, z: 6.581792}
+  m_LocalPosition: {x: -9.84939, y: 2.2451, z: 0}
+  m_LocalScale: {x: 0.43285805, y: 0.43843377, z: 6.581792}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2010562133}
@@ -2792,10 +2814,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2838,7 +2860,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 388425808}
   - {fileID: 2010562133}
   m_Father: {fileID: 657046019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5056,7 +5077,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8ba498ed9e346e74d98613edf67fe1b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5077,13 +5098,14 @@ Transform:
   m_GameObject: {fileID: 2010562131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90, y: -51, z: 0}
-  m_LocalScale: {x: 42.136936, y: 47.402992, z: 1}
+  m_LocalPosition: {x: 124, y: -465, z: 0}
+  m_LocalScale: {x: 94.065186, y: 90.96528, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 634120132}
   - {fileID: 26397545}
   - {fileID: 1529462676}
+  - {fileID: 388425808}
   m_Father: {fileID: 810356883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2010562134

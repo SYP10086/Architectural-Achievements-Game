@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Options.unity
     guid: ab183f26a4aae09409227b4ead89f359
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/Galary.unity
     guid: 8df246a0967720b469cf8526d6fc0e96
   - enabled: 1

@@ -8,6 +8,15 @@ public class AchieveDetect : MonoBehaviour
     public double delaytime = 1.5,time1=0;
     public bool start=false;
     static public bool[] achieve= {false,false,false };
+    //int[] shuxin
+    //{
+    //    get
+    //    {
+    //        return { };
+            
+    //    }
+    //    set { }
+    //}
     private void Awake()
     {
        achieve[0] = (PlayerPrefs.GetInt("achieve[0]", 0)==1);

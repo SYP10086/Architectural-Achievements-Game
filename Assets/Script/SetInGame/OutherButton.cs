@@ -23,6 +23,7 @@ public class OutherButton : MonoBehaviour
         AchieveDetect.achieve[1] = false;
         AchieveDetect.achieve[2] = false;
         EndInformation.endOver=false;
+        EndInformation.end=false;
         for (int level=0;level<3;level++)
         {
             PlayerPrefs.SetInt($"achieve[{level}]", AchieveDetect.achieve[level] ? 1 : 0);

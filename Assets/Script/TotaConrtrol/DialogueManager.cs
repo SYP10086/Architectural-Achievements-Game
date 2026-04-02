@@ -15,9 +15,9 @@ public class DialogueManager : MonoBehaviour
     public Material DefaultMat;
 
     // 静态变量，跨场景保存
-    private static bool hasShown1 = false;
-    private static bool hasShown2 = false;
-    private static bool hasShown3 = false;
+    public static bool hasShown1 = false;
+    public static bool hasShown2 = false;
+    public static bool hasShown3 = false;
 
     private Dialogue currentDialogue;
     private int currentSentenceIndex;

@@ -10,7 +10,7 @@ public class DioManager : MonoBehaviour
     GameObject DialogueManager1, DialogueManager2, DialogueManager3, DialogueManager4, DialogueManager5;
     static public bool OnDio=false;
     static int number;
-    int collectNumber;
+    int collectNumber=0;
     // Start is called before the first frame update
     void Start()
     {

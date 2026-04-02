@@ -84,6 +84,8 @@ public class DialogueManager : MonoBehaviour
 
     void StartDialogue(Dialogue dialogue)
     {
+        GameObject trigger = GameObject.Find("Trigger");
+        if (trigger != null) {trigger.SetActive(true);}
         if (dialogue == null || dialogue.dialogueText == null)
         {
            
@@ -186,6 +188,8 @@ public class DialogueManager : MonoBehaviour
         if (typingDialogue == null || typingText == null)
         {
             Debug.LogWarning("TypeSentence: 对话已结束，无法显示文字");
+        
+           
             isTyping = false;
             yield break;
         }
@@ -212,6 +216,8 @@ public class DialogueManager : MonoBehaviour
 
     void EndCurrentDialogue()
     {
+        GameObject trigger = GameObject.Find("Trigger");
+        if (trigger != null) { trigger.SetActive(false); }
         // 停止正在进行的打字协程
         if (typingCoroutine != null)
         {

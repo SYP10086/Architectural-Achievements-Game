@@ -8,7 +8,7 @@ public class Dialogue : MonoBehaviour
 
     public string Name;
     public GameObject dialoguePanel;
-    [HideInInspector] public bool hasShown=false;
+    [HideInInspector] public  bool hasShown=false;
     public Text dialogueText;
     [TextArea(3, 5)]
     public string[] sentences;

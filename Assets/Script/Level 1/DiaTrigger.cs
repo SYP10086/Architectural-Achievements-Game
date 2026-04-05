@@ -7,6 +7,7 @@ public class DiaTrigger : MonoBehaviour
 {
     public Dialogue Dialogue;
     public GameObject DialoguePanel;
+    public string targetScene;
     private bool isTyping;
     private Coroutine typingCoroutine;
     public float typingSpeed = 0.05f;
@@ -116,7 +117,10 @@ public class DiaTrigger : MonoBehaviour
 
         // ÷ÿ÷√∂‘ª∞◊¥Ã¨
         // currentSentenceIndex = 0;
-        SceneManager.LoadScene("Level 1");
-   
+        if (!string.IsNullOrEmpty(targetScene))
+        {
+            SceneManager.LoadScene(targetScene);
+        }
+
     }
 }

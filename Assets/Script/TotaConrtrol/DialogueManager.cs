@@ -14,29 +14,51 @@ public class DialogueManager : MonoBehaviour
     public Material Material;
     public Material DefaultMat;
 
+    // 静态变量，跨场景保存
+    public static bool hasShown1 = false;
+    public static bool hasShown2 = false;
+    public static bool hasShown3 = false;
+
     private Dialogue currentDialogue;
     private int currentSentenceIndex;
     private bool isTyping;
     private Coroutine typingCoroutine;
-    
 
     private enum DialogueState
     {
-        NotStarted,     // 未开始，等待显示第一段
-        Dialogue1,      // 对话1进行中
-        Dialogue2,      // 对话2进行中
-        Dialogue3,      // 对话3进行中
-        WaitingForNext, // 等待点击开始下一段
-        Completed       // 全部完成
+        NotStarted,
+        Dialogue1,
+        Dialogue2,
+        Dialogue3,
+        WaitingForNext,
+        Completed
     }
 
     private DialogueState currentState = DialogueState.NotStarted;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
-     
         ValidateDialogues();
         CloseAllPanels();
+
+        // 根据静态变量恢复状态
+        if (hasShown1 && !hasShown2)
+        {
+            currentState = DialogueState.WaitingForNext;
+        }
+        else if (hasShown1 && hasShown2 && !hasShown3)
+        {
+            currentState = DialogueState.WaitingForNext;
+        }
+        else if (hasShown1 && hasShown2 && hasShown3)
+        {
+            currentState = DialogueState.Completed;
+        }
     }
 
     void ValidateDialogues()
@@ -49,16 +71,11 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("dialogue3 的 dialogueText 未赋值！");
     }
 
-
-  
-
-    // 同一个按钮点击方法
     public void OnButtonClick()
     {
         switch (currentState)
         {
             case DialogueState.NotStarted:
-                // 开始第一段对话
                 StartDialogue(dialogue1);
                 currentState = DialogueState.Dialogue1;
                 break;
@@ -66,59 +83,58 @@ public class DialogueManager : MonoBehaviour
             case DialogueState.Dialogue1:
             case DialogueState.Dialogue2:
             case DialogueState.Dialogue3:
-                // 对话进行中：显示下一句
                 DisplayNextSentence();
                 break;
 
             case DialogueState.WaitingForNext:
-                // 上一段已结束，开始下一段
                 StartNextDialogue();
                 break;
 
             case DialogueState.Completed:
                 Debug.Log("所有对话已完成");
-                // 可选：禁用按钮或显示提示
                 break;
         }
     }
 
     void StartDialogue(Dialogue dialogue)
     {
+        GameObject trigger = GameObject.Find("Trigger");
+        if (trigger != null) { trigger.SetActive(true); }
+
         if (dialogue == null || dialogue.dialogueText == null)
         {
-           
             return;
         }
-       CloseAllPanels();
+
+        CloseAllPanels();
         Camera camera = Camera.main;
-       camera.GetComponent<CameraBlurDarken>().enabled = true;
-        
+        if (camera != null)
+            camera.GetComponent<CameraBlurDarken>().enabled = true;
+
         currentDialogue = dialogue;
         currentSentenceIndex = 0;
 
-        if (dialogue == dialogue1) dialogue1.hasShown = true;
-        else if (dialogue == dialogue2) dialogue2.hasShown = true;
-        else if (dialogue == dialogue3) dialogue3.hasShown = true;
+        // 使用静态变量记录
+        if (dialogue == dialogue1) hasShown1 = true;
+        else if (dialogue == dialogue2) hasShown2 = true;
+        else if (dialogue == dialogue3) hasShown3 = true;
 
-       
         if (dialogue.dialoguePanel != null)
             dialogue.dialoguePanel.SetActive(true);
 
-       
         DisplayNextSentence();
     }
 
     void StartNextDialogue()
     {
-        // 根据状态决定下一段对话
         if (currentState == DialogueState.WaitingForNext)
         {
-            if (dialogue1.hasShown && dialogue2 != null && !dialogue2.hasShown)
+            if (hasShown1 && dialogue2 != null && !hasShown2)
             {
                 StartDialogue(dialogue2);
                 currentState = DialogueState.Dialogue2;
             }
-            else if (dialogue1.hasShown && dialogue2.hasShown && dialogue3 != null && !dialogue3.hasShown)
+            else if (hasShown1 && hasShown2 && dialogue3 != null && !hasShown3)
             {
                 StartDialogue(dialogue3);
                 currentState = DialogueState.Dialogue3;
@@ -144,16 +160,14 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        // 检查是否还有句子
         if (currentSentenceIndex < currentDialogue.sentences.Length)
         {
-            DioManager.OnDio = true;//bu可移动
-            if(GameObject.Find("Player")!=null&& GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity.y>0)
-                GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity= Vector3.zero;
-            string sentence = currentDialogue.sentences[currentSentenceIndex];
-           
+            DioManager.OnDio = true;
+            if (GameObject.Find("Player") != null && GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity.y > 0)
+                GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-            // 如果正在打字，直接显示完整句子
+            string sentence = currentDialogue.sentences[currentSentenceIndex];
+
             if (isTyping)
             {
                 StopCoroutine(typingCoroutine);
@@ -163,14 +177,12 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                // 开始打字效果
                 typingCoroutine = StartCoroutine(TypeSentence(sentence));
             }
         }
         else
         {
-            // 当前对话所有句子已显示完，结束对话
-            DioManager.OnDio = false;//可移动
+            DioManager.OnDio = false;
             EndCurrentDialogue();
         }
     }
@@ -178,8 +190,6 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         isTyping = true;
-
-        // 缓存当前对话和Text组件的引用
         Dialogue typingDialogue = currentDialogue;
         Text typingText = currentDialogue?.dialogueText;
 
@@ -212,7 +222,9 @@ public class DialogueManager : MonoBehaviour
 
     void EndCurrentDialogue()
     {
-        // 停止正在进行的打字协程
+        GameObject trigger = GameObject.Find("Trigger");
+        if (trigger != null) { trigger.SetActive(false); }
+
         if (typingCoroutine != null)
         {
             StopCoroutine(typingCoroutine);
@@ -221,13 +233,11 @@ public class DialogueManager : MonoBehaviour
 
         isTyping = false;
 
-        // 关闭当前对话面板
         if (currentDialogue != null && currentDialogue.dialoguePanel != null)
         {
             currentDialogue.dialoguePanel.SetActive(false);
         }
 
-        // 根据当前状态设置等待状态
         switch (currentState)
         {
             case DialogueState.Dialogue1:
@@ -238,10 +248,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         currentDialogue = null;
-       // Renderer renderer = Background.GetComponent<Renderer>();
-       // renderer.material = DefaultMat;
-       Camera camera = Camera.main;
-       camera.GetComponent<CameraBlurDarken>().enabled = false;
+
+        Camera camera = Camera.main;
+        if (camera != null)
+            camera.GetComponent<CameraBlurDarken>().enabled = false;
     }
 
     void CloseAllPanels()
@@ -253,20 +263,4 @@ public class DialogueManager : MonoBehaviour
         if (dialogue3 != null && dialogue3.dialoguePanel != null)
             dialogue3.dialoguePanel.SetActive(false);
     }
-
-   /* public void ResetDialogues()
-    {
-        // 停止所有协程
-        StopAllCoroutines();
-        isTyping = false;
-
-        currentState = DialogueState.NotStarted;
-        currentDialogue = null;
-
-        if (dialogue1 != null) dialogue1.hasShown = false;
-        if (dialogue2 != null) dialogue2.hasShown = false;
-        if (dialogue3 != null) dialogue3.hasShown = false;
-
-        CloseAllPanels();
-    }*/
 }

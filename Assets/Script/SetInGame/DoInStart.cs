@@ -10,6 +10,12 @@ public class DoInStart : MonoBehaviour
 {
     bool i = false;
     public DialogueManager dialogueManager;
+    private void Awake()
+    {
+        DialogueManager.hasShown1 = false;
+        DialogueManager.hasShown2 = false;
+        DialogueManager.hasShown3 = false;
+    }
     public void TriggerDialogue()
     {
         if (dialogueManager != null)
@@ -22,7 +28,6 @@ public class DoInStart : MonoBehaviour
         if(!i)
         {
             i = true;
-            //Time.timeScale = 0;
             TriggerDialogue();
         }
     }

@@ -42,15 +42,11 @@ public class ChooseBuildings : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, GroundLayer))
             {
-                Debug.Log("Hit: " + hit.collider.name);  // 添加这一行
                 Vector3 targetPos = hit.point;
                 targetPos.y += heightOffset; 
                 transform.position = targetPos;
             }
-            else
-            {
-                Debug.Log("No hit");  // 添加这一行
-            }
+
         }
         if (!isDragging && num == DestinationMovement.DestinationCount)
         {
@@ -84,7 +80,6 @@ public class ChooseBuildings : MonoBehaviour
         
         if (Vector3.Distance(transform.position,destination)<=0.1f&& !hasExecuted)
         {
-            //特效
             hasExecuted = true;
             DestinationMovement.DestinationCount++;
             this.enabled = false;

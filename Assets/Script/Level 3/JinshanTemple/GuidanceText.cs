@@ -7,8 +7,8 @@ public class GuidanceText : MonoBehaviour
 {
     private int lastDetectedValue;
     [SerializeField] private GameObject exitButton;
-    [SerializeField] private GameObject text;          // 用于激活/失活的容器物体
-    [SerializeField] private TextMeshPro targetText;   // 直接在Inspector中拖拽TMP组件
+    [SerializeField] private GameObject text;          
+    [SerializeField] private TextMeshPro targetText;   
     private Camera camera;
 
     void Start()
@@ -16,14 +16,6 @@ public class GuidanceText : MonoBehaviour
         lastDetectedValue = -1;
         camera = Camera.main;
 
-        if (targetText == null)
-        {
-            Debug.LogError("GuidanceText: targetText 未在Inspector中赋值！请拖拽场景中的 TextMeshPro 组件到此字段。");
-        }
-        else
-        {
-            Debug.Log("GuidanceText: targetText 引用成功。");
-        }
     }
 
     void Update()

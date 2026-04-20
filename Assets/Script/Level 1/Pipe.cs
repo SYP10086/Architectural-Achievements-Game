@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//AI辅助生成：Gemini 3.1Pro，2026年3月8日，23：08
 public enum PipeType
 {
     Straight, 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//AI辅助生成：Gemini 3.1Pro，2026年3月8日，23：08
+//AI辅助生成：Qwen3-Max，2026年4月21日，17：30
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;

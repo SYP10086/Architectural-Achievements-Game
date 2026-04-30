@@ -1,25 +1,25 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.Profiling;
 
 public class DestinationMovement : MonoBehaviour
 {
-    [SerializeField] private Vector3[] destination=new Vector3[5];
-    public static int DestinationCount { get; set; } =0;
-    // Start is called before the first frame update
+    [SerializeField] private Vector3[] destination = new Vector3[5];
+
+    public static int DestinationCount { get; set; } = -1;
+
     void Start()
     {
-        DestinationCount = 0;
-        
+        DestinationCount = -1;    
     }
 
-    // Update is called once per frame
     void Update()
     {
-        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
-        switch (DestinationCount){
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+
+        switch (DestinationCount)
+        {
+            case -1:
+                break;
             case 0:
                 transform.position = destination[0];
                 sr.sortingOrder = 3;
@@ -41,6 +41,7 @@ public class DestinationMovement : MonoBehaviour
                 sr.sortingOrder = 3;
                 break;
         }
+
         if (DestinationCount == 5)
         {
             gameObject.SetActive(false);
